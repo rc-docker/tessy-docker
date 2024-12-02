@@ -1,5 +1,4 @@
-FROM ubuntu:22.04
-MAINTAINER Razorcat GmbH <support@razorcat.com>
+FROM docker.io/ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 #
