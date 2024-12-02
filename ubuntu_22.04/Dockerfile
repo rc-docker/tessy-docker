@@ -12,7 +12,8 @@ RUN  echo 'deb [arch=amd64] http://www.razorcat.com/deb/ jammy non-free' \
 #
 # Install needed packages
 #
-RUN apt-get update && \
+ARG TESSY_VERSION=*
+RUN apt-get update&& \
     apt-get install -y -q --no-install-recommends \
 	ca-certificates \
 	dumb-init \
@@ -31,7 +32,7 @@ RUN apt-get update && \
 	libxi6 \
 	libxrender1 \
 	libxtst6 \
-	rc-tessy-5.1 \
+	rc-tessy-5.1=$TESSY_VERSION \
 	util-linux \
 	xvfb \
         && rm -rf /var/lib/apt/lists/*
