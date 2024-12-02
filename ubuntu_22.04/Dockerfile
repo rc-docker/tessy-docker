@@ -53,6 +53,8 @@ ENV DISPLAY=:1
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/entrypoint.sh"]
 
+# we need a root user to create user tessy with client specified uid
+USER root
 
 # provide hotfixes as tar files next the dockerfile, e.g. tessy_5.1.8_hotfix_0_1.tar.gz
 ADD tessy_*.tar.gz /opt/razorcat/TESSY_5.1/
